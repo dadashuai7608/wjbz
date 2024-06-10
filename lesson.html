@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>使用&上传教程</title>
+    <link rel="stylesheet" href="/APP/homestyle.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: gold;
+            background-color: black;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid gold;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: gold;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animated {
+            animation: fade 3s ease-in-out;
+        }
+        .menu-toggle {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+    .menu-toggle {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 20001;
+
+        }
+        .menu-toggle span,
+        .menu-toggle span:before,
+        .menu-toggle span:after,
+        .menu-toggle span:nth-child(4) {
+            display: block;
+            background-color: #ffd700;
+            height: 5px;
+            width: 30px;
+            transition: all 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        transform-origin: center;
+            margin-top: 1px;
+        }
+        .menu-toggle span:before {
+            content: '';
+            margin-top: 5px; /* 4px height / 2 */
+        }
+        .menu-toggle span:after {
+            content: '';
+            margin-top: 13px; /* 4px height / 2 */
+        }
+        .menu-toggle span:nth-child(4) {
+            content: '';
+            margin-top: 20px; /* 4px height * 3 lines / 2 */
+        }
+        .menu {
+            list-style-type: none;
+            background-color: #1a1a1a;
+            position: fixed;
+            top: 0;
+             z-index: 10000; /* 添加z-index属性，确保菜单始终在最上方 */
+            width: 200px;
+            height: 100vh; /* 设置高度为视口的100% */
+            transition: left 0.3s ease-in-out;
+            overflow-y: auto;
+   	    left: -700px; /* 稍微增大负值，以确保菜单完全隐藏 */
+            padding: 20px;
+        }
+        .menu.active {
+            left: 0;
+            border-right: 5px solid #ffd700; /* 添加黄色边框 */
+             z-index: 20000;
+        }
+        .menu li {
+            margin-bottom: 10px;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: grey;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px;
+            border: 1px solid transparent;
+        }
+        .menu li a:hover {
+            color: #ffd700;
+            border-color: #ffd700;
+
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<div class="menu-container">
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="menu" id="menuList">
+<li><a href="https://dadashuai7608.github.io/wjbz/">主页</a></li>
+<li><a href="https://chiyang001.github.io/APP/">应用下载站</a></li>
+<li><a href="Navigation directory/gjx.html">工具箱下载</a></li>
+  </ul>
+</div>
+
+
+<script>
+  var menuVisible = false;
+  var menu = document.getElementById("menuList");
+  var subMenus = document.querySelectorAll(".sub-menu");
+
+  function toggleMenu() {
+    menuVisible =!menuVisible;
+    menu.classList.toggle("active");
+
+    // 隐藏所有子菜单
+    subMenus.forEach(function(subMenu) {
+      subMenu.style.display = "none";
+    });
+  }
+
+  // 为每个子菜单的父菜单项添加点击事件处理程序
+  subMenus.forEach(function(subMenu) {
+    subMenu.parentNode.addEventListener("click", function(event) {
+      event.stopPropagation(); // 阻止事件冒泡
+
+      // 切换子菜单的显示状态
+      subMenu.style.display = subMenu.style.display === "none"? "block" : "none";
+    });
+  });
+</script>
+
+
+    <div class="container animated">
+        <h1>上传教程</h1>
+        <div class="disclaimer">
+    <p><strong>1.加入群聊</strong>加群聊253474207以上传壁纸</p>
+    <p><strong>2.上传壁纸</strong>请艾特群主或奕奕上传，要表明上传内容上传壁纸注意事项：<br>1.不要上传违规等不良壁纸<br>2.请改好尺寸后发到群内<br>3.开发者不常在线，但看到会回，请不要着急(最迟三天绝对上传，除非壁纸不合格)<br>4.请不要发网站已有的壁纸，发之前请确认网站并无此壁纸<br>5.要上传4x的壁纸尺寸为：360*320<br>6.要上传3系列的壁纸尺寸为：320*320<br>7.可以直接发壁纸图片，也可以发图片的直链下载和图片直链<br></p>
+    <p><strong>额外注意事项：</strong></p>
+    <ul>
+        <li>最好不要使用网盘下载，对手表不太友好</li>
+        <li>图片直链是使用的图片，而不是原图片</li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+        <h1>使用教程</h1>
+        <div class="disclaimer">
+    <p><strong>1.下载工具</strong>点击相中的壁纸下载，在华为儿童手表应用下载站里下载cx文件管理器</p>
+    <p><strong>2.移动壁纸</strong><br>1.打开cx文件管理器<br>2.打开在根目录打开文件夹"Download"里面有下载的图片<br>3.选择图片，复制或剪切都可以<br>4.再次回到根目录打开文件夹"DCLM"<br>5.3s直接将图片复制到文件夹即可<br>6.除3s以外手表需回到根目录依次打开文件夹"Pictures"-"con.baidu.input_hwwatch"-"helios"将图片粘贴进去即可<br></p>
+    <p><strong>1.使用壁纸</strong>长按桌面壁纸进入壁纸选择界面，选择第三方壁纸，选择图片即可<br></p>
+    <p><strong>额外注意事项：</strong></p>
+    <ul>
+        <li>3系列和4系列所使用的尺寸是不一样的，请注意甄别</li>
+    </ul>
+</div>
+
+    </div>
+    </div>
+</body>
+<script>
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    var nav = document.getElementById('nav-list');
+    if (nav.style.left === '0px') {
+        nav.style.left = '-100%';
+    } else {
+        nav.style.left = '0px';
+    }
+});
+
+
+</script>
+</html>
